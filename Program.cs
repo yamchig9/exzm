@@ -1,8 +1,14 @@
 ﻿Console.WriteLine("Введите строки через запятую:");
-string input = Console.ReadLine();
+string? input = Console.ReadLine();
 
 // Разделить входную строку на подстроки по запятой
-string[] inputArray = input.Split(',');
+string[] inputArray = input!.Split(',');
+
+// Удалить лишние пробелы в начале и конце каждой строки
+for (int i = 0; i < inputArray.Length; i++)
+{
+    inputArray[i] = inputArray[i].Trim();
+}
 
 // Подсчитать количество строк, удовлетворяющих условию
 int count = 0;
